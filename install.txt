@@ -1,0 +1,4 @@
+type=editplugin
+folder=daimyojinizer-0.0.1
+contentsdir=daimyojinizer-0.0.1
+description=大明神式歌連続音歌詞プラグイン
