@@ -16,11 +16,8 @@ def daimyojinize(plugin: utaupy.utauplugin.UtauPlugin):
     # [#PREV] のノートがあるとき
     if plugin.previous_note is not None:
         notes.insert(0, plugin.previous_note)
-    # [#NEXT] のノートがあるとき
-    if plugin.next_note is not None:
-        notes.insert(0, plugin.next_note)
-
-    for idx, note in enumerate(notes[1:-1], 1):
+    # 音程差を調べて、それに応じて歌詞を変える
+    for idx, note in enumerate(notes[1:], 1):
         notenum_difference = note.notenum - notes[idx - 1].notenum
         note.lyric = note.lyric.strip('↑↓')
         if note.lyric == 'R' or notes[idx - 1].lyric == 'R':
